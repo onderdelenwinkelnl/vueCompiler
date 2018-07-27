@@ -2,5 +2,5 @@
 find /var/www -maxdepth 2 -name '*package.json' -print0 \
   | xargs -0 -n1 dirname \
   | sort -u \
-  | xargs -I {} -n1 /bin/sh -c "cd {} && npm install && vue add vue-cli-plugin-build-watch && screen -dmS vue-compiler npm run build-watch"
+  | xargs -I {} -n1 /bin/sh -c "cd {} && npm install && vue add vue-cli-plugin-build-watch && vue add vue-cli-plugin-build-env && vue add vue-cli-plugin-static-path && screen -dmS vue-compiler npm run build-watch"
 top
